@@ -1,0 +1,25 @@
+	push 3
+	storei $_count
+$$_start_0:
+	push 0
+	loadi $_count
+	push 1
+	add
+	sub
+	test_n
+	push 1
+	sub
+	jump_n $$_end_1
+	push 32
+	sysc OUT_CHAR
+	loadi $_count
+	sysc OUT_DEC
+	loadi $_count
+	push 1
+	sub
+	storei $_count
+	jump $$_start_0
+$$_end_1:
+	halt
+.data
+$_count: 0

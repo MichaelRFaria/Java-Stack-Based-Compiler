@@ -1,0 +1,35 @@
+	loadi $_x
+	push 1
+	sub
+	storei $_x
+	push 55
+	storei $_zz
+	loadi $_x
+	push 7
+	sub
+	jumpi_z $$_case_7_2
+	push -1
+	sub
+	jumpi_z $$_case_1_3_negative
+	jumpi $$_default_1
+$$_case_7_2:
+	push 99
+	sysc OUT_DEC
+	sysc OUT_LN
+	jumpi $$_end_0
+$$_case_1_3_negative:
+	loadi $_x
+	loadi $_zz
+	add
+	sysc OUT_DEC
+	sysc OUT_LN
+	jumpi $$_end_0
+$$_default_1:
+	loadi $_x
+	sysc OUT_DEC
+	sysc OUT_LN
+$$_end_0:
+	halt
+.data
+$_zz: 0
+$_x: 0

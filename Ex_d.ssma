@@ -1,0 +1,5 @@
+	push 20
+	storei $_x
+	halt
+.data
+$_x: 0
